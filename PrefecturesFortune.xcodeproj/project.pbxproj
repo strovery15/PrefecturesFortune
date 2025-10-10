@@ -15,6 +15,9 @@
 		896BA0B72E989C860026F5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BA0B52E989C860026F5A6 /* LaunchScreen.storyboard */; };
 		896EDF1B2E98C65800AD0664 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1A2E98C65800AD0664 /* MainRouter.swift */; };
 		896EDF1E2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1D2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift */; };
+		896EDF222E98D07B00AD0664 /* DataInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF212E98D07B00AD0664 /* DataInput.storyboard */; };
+		896EDF242E98D0A700AD0664 /* DataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF232E98D0A700AD0664 /* DataInputViewController.swift */; };
+		896EDF272E98E7CD00AD0664 /* DataInputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */; };
 		896F9F092E98AD5D00D34DDF /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F9F082E98AD5D00D34DDF /* AppDependencies.swift */; };
 		896F9F0B2E98AFC400D34DDF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F9F0A2E98AFC400D34DDF /* MainPresenter.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		896BA0B82E989C860026F5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		896EDF1A2E98C65800AD0664 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		896EDF1D2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFortuneDataInteractor.swift; sourceTree = "<group>"; };
+		896EDF212E98D07B00AD0664 /* DataInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataInput.storyboard; sourceTree = "<group>"; };
+		896EDF232E98D0A700AD0664 /* DataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputViewController.swift; sourceTree = "<group>"; };
+		896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputPresenter.swift; sourceTree = "<group>"; };
 		896F9F082E98AD5D00D34DDF /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		896F9F0A2E98AFC400D34DDF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				8901BBFF2E98A33500770DED /* Main */,
+				896EDF1F2E98CF7A00AD0664 /* DataInput */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -108,6 +115,32 @@
 				896EDF1D2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		896EDF1F2E98CF7A00AD0664 /* DataInput */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF202E98CF9100AD0664 /* View */,
+				896EDF252E98E7A700AD0664 /* Presenter */,
+			);
+			path = DataInput;
+			sourceTree = "<group>";
+		};
+		896EDF202E98CF9100AD0664 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF232E98D0A700AD0664 /* DataInputViewController.swift */,
+				896EDF212E98D07B00AD0664 /* DataInput.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		896EDF252E98E7A700AD0664 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		896F9F062E98A3CF00D34DDF /* View */ = {
@@ -186,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				896BA0B72E989C860026F5A6 /* LaunchScreen.storyboard in Resources */,
+				896EDF222E98D07B00AD0664 /* DataInput.storyboard in Resources */,
 				896BA0B42E989C860026F5A6 /* Assets.xcassets in Resources */,
 				896BA0B22E989C850026F5A6 /* Main.storyboard in Resources */,
 			);
@@ -199,6 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				896F9F0B2E98AFC400D34DDF /* MainPresenter.swift in Sources */,
+				896EDF272E98E7CD00AD0664 /* DataInputPresenter.swift in Sources */,
+				896EDF242E98D0A700AD0664 /* DataInputViewController.swift in Sources */,
 				896F9F092E98AD5D00D34DDF /* AppDependencies.swift in Sources */,
 				896BA0AF2E989C850026F5A6 /* MainViewController.swift in Sources */,
 				896BA0AB2E989C850026F5A6 /* AppDelegate.swift in Sources */,

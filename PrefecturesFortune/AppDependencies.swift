@@ -14,7 +14,11 @@ class AppDependencies {
         return viewController
     }
     
-//    func assembleDataInputView() -> UIViewController {
-//        
-//    }
+    func assembleDataInputModule() -> UIViewController {
+        guard let viewController = UIStoryboard(name: "DataInput", bundle: nil).instantiateInitialViewController() as? DataInputViewController else {
+            fatalError()
+        }
+        viewController.presenter = DataInputPresenter(view: viewController, dependency: .init())
+        return viewController
+    }
 }
