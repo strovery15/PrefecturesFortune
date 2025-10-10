@@ -2,6 +2,10 @@
 
 import UIKit
 
+protocol MainView: AnyObject {
+    
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton! {
@@ -16,18 +20,32 @@ class MainViewController: UIViewController {
         }
     }
     
+    var presenter: MainPresentation!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        firstConfiguration()
         
     }
     
     func firstConfiguration() {
         
     }
+    
+    @IBAction func startButtonAction(_ sender: Any) {
+        presenter.fortuneStart()
+    }
+    
+    @IBAction func setDataButtonAction(_ sender: Any) {
+        presenter.setData()
+    }
+    
+}
 
+extension MainViewController: MainView {
+    
 }
 
 extension MainViewController {

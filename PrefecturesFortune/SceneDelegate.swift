@@ -12,9 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        guard let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController else {
-            fatalError()
-        }
+        let appDependencies = AppDependencies()
+        let mainViewController = appDependencies.assembleMainModule()
         let navigation = UINavigationController(rootViewController: mainViewController)
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
