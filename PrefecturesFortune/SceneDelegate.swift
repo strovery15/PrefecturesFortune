@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  PrefecturesFortune
-//
-//  Created by 川前優太 on 2025/10/10.
-//
+
 
 import UIKit
 
