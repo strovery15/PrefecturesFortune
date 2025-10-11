@@ -37,6 +37,7 @@ extension BirthdayCell {
     //datePicker
     func configureDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
         datePicker.locale = Locale(identifier: "ja_JP")
     }
 }

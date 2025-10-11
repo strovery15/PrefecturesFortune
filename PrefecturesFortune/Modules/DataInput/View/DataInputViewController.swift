@@ -4,15 +4,20 @@ import UIKit
 
 protocol DataInputView: AnyObject {
     
+    func dataInput(_ userData: UserData)
 }
 
 class DataInputViewController: UIViewController {
     
     var presenter: DataInputPresentation!
     
-    let nameCellIdentifier = "NameCell"
-    let birthdayCellIdentifier = "BirthdayCell"
-    let bloodtypeCellIdentifier = "BloodtypeCell"
+    private var name: String = ""
+    private var birthday: Date = Date()
+    private var bloodtype: String = "A型"
+    
+    private let nameCellIdentifier = "NameCell"
+    private let birthdayCellIdentifier = "BirthdayCell"
+    private let bloodtypeCellIdentifier = "BloodtypeCell"
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -37,7 +42,6 @@ class DataInputViewController: UIViewController {
 
         firstConfiguration()
        
-        
     }
     
     func firstConfiguration() {
@@ -48,26 +52,26 @@ class DataInputViewController: UIViewController {
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
-        
+        presenter.addData(name, birthday, bloodtype, Date())
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
-        
+        dismiss(animated: true)
     }
     
     @objc func notifyName(_ notification: Notification) {
         let name = notification.userInfo!["name"] as! String
-        print(name)
+        self.name = name
     }
     
     @objc func notifyBirthday(_ notification: Notification) {
         let birthday = notification.userInfo!["birthday"] as! Date
-        print(birthday)
+        self.birthday = birthday
     }
     
     @objc func notifyBloodtype(_ notification: Notification) {
         let bloodtype = notification.userInfo!["bloodtype"] as! String
-        print(bloodtype)
+        self.bloodtype = bloodtype
     }
     
 
@@ -75,6 +79,11 @@ class DataInputViewController: UIViewController {
 
 extension DataInputViewController: DataInputView {
     
+    func dataInput(_ userData: UserData) {
+        print(userData)
+        NotificationCenter.default.post(name: .notifyUserData, object: nil, userInfo: ["userData": userData])
+        dismiss(animated: true)
+    }
 }
 
 extension DataInputViewController {
