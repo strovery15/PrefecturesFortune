@@ -23,3 +23,9 @@ class AppDependencies {
     }
     
 }
+
+extension Notification.Name {
+    static let notifyName = Notification.Name("notifyName")
+    static let notifyBirthday = Notification.Name("notifyBirthday")
+    static let notifyBloodtype = Notification.Name("notifyBloodtype")
+}

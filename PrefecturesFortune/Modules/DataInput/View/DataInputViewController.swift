@@ -42,6 +42,9 @@ class DataInputViewController: UIViewController {
     
     func firstConfiguration() {
         
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyName(_:)), name: .notifyName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyBirthday(_:)), name: .notifyBirthday, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyBloodtype(_:)), name: .notifyBloodtype, object: nil)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
@@ -50,6 +53,21 @@ class DataInputViewController: UIViewController {
     
     @IBAction func closeButtonAction(_ sender: Any) {
         
+    }
+    
+    @objc func notifyName(_ notification: Notification) {
+        let name = notification.userInfo!["name"] as! String
+        print(name)
+    }
+    
+    @objc func notifyBirthday(_ notification: Notification) {
+        let birthday = notification.userInfo!["birthday"] as! Date
+        print(birthday)
+    }
+    
+    @objc func notifyBloodtype(_ notification: Notification) {
+        let bloodtype = notification.userInfo!["bloodtype"] as! String
+        print(bloodtype)
     }
     
 
@@ -99,7 +117,7 @@ extension DataInputViewController {
         let systemImage = UIImage(systemName: "xmark", withConfiguration: symbolConfiguration)
         closeButton.setImage(systemImage, for: .normal)
         closeButton.layer.cornerRadius = 17
-        closeButton.frame = CGRect(x: 20, y: 20, width: 34, height: 34)
+        closeButton.frame = CGRect(x: 20, y: 60, width: 34, height: 34)
         
     }
 }
