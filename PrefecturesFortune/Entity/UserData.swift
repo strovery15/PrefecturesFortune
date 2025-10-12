@@ -6,7 +6,7 @@ struct UserData {
     
     let name: String
     let birthday: YearMonthDay
-    let blood_type: String
+    let bloodtype: String
     let today: YearMonthDay
     
     struct YearMonthDay {

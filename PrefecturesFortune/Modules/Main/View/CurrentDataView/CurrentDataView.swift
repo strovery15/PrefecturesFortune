@@ -70,7 +70,7 @@ class CurrentDataView: UIView {
         let birDay = userData.birthday.day
         birthdayLabel.text = "誕生日  \(birYear)年\(birMonth)月\(birDay)日"
         
-        bloodtypeLabel.text = "血液型  \(userData.blood_type)"
+        bloodtypeLabel.text = "血液型  \(userData.bloodtype)"
         
         let todaYear = userData.today.year
         let todaMonth = userData.today.month

@@ -2,11 +2,11 @@
 
 import Foundation
 
-protocol GetFortuneDataUseCase {
+protocol GetPrefectureDataUseCase {
     func execute(parameter: String, completion: ((Result<String, Never>) -> ()))
 }
 
-class GetFortuneDataInteractor: GetFortuneDataUseCase {
+class GetPrefectureDataInteractor: GetPrefectureDataUseCase {
     
     func execute(parameter: String, completion: ((Result<String, Never>) -> ())) {
         completion(.success(parameter))

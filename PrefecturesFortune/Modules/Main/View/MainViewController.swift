@@ -48,7 +48,15 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func startButtonAction(_ sender: Any) {
-        presenter.fortuneStart()
+        
+        if let userData = userDate {
+            presenter.fortuneStart(userData)
+        } else {
+            let alertController = UIAlertController(title: "データがセットされていません", message: "データをセットしてください", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
+        }
     }
     
     @IBAction func setDataButtonAction(_ sender: Any) {

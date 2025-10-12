@@ -23,7 +23,7 @@ class CreateUserDataInteractor: CreateUserDataUseCase {
         let userData = UserData(
             name: parameter1,
             birthday: .init(year: param2Year, month: param2Month, day: param2Day),
-            blood_type: parameter3,
+            bloodtype: parameter3,
             today: .init(year: param4Year, month: param4Month, day: param4Day)
         )
         completion(.success(userData))
