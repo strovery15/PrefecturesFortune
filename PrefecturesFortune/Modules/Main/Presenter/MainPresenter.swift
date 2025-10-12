@@ -30,7 +30,7 @@ extension MainPresenter: MainPresentation {
     
     func fortuneStart(_ userData: UserData) {
         print("fortuneStart")
-        dependency.getPrefectureData.execute(parameter: "getFortuneData") { result in
+        dependency.getPrefectureData.execute(parameter: userData) { result in
             switch result {
             case .success(let string):
                 print(string)

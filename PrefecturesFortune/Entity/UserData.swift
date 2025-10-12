@@ -2,14 +2,14 @@
 
 import Foundation
 
-struct UserData {
+struct UserData: Codable {
     
     let name: String
     let birthday: YearMonthDay
-    let bloodtype: String
+    let blood_type: String
     let today: YearMonthDay
     
-    struct YearMonthDay {
+    struct YearMonthDay: Codable {
         let year: Int
         let month: Int
         let day: Int

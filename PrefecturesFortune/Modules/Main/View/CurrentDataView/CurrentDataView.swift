@@ -10,6 +10,8 @@ class CurrentDataView: UIView {
         }
     }
     
+    let display: [String: String] = ["a": "A型", "b": "B型", "o": "O型", "ab": "AB型"]
+    
     @IBOutlet weak var view: UIView!
     
     @IBOutlet weak var nameLabel: UILabel! {
@@ -70,7 +72,7 @@ class CurrentDataView: UIView {
         let birDay = userData.birthday.day
         birthdayLabel.text = "誕生日  \(birYear)年\(birMonth)月\(birDay)日"
         
-        bloodtypeLabel.text = "血液型  \(userData.bloodtype)"
+        bloodtypeLabel.text = "血液型  \(display[userData.blood_type]!)"
         
         let todaYear = userData.today.year
         let todaMonth = userData.today.month

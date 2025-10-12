@@ -4,7 +4,9 @@ import UIKit
 
 class BloodtypeCell: UITableViewCell {
     
-    let bloodtype = ["A型", "B型", "O型", "AB型"]
+    //bloodtypeの要素を変更する際はBloodtypeCell.displayとCurrentDataView.displayを変更する
+    let bloodtype = ["a", "b", "o", "ab"]
+    let display: [String: String] = ["a": "A型", "b": "B型", "o": "O型", "ab": "AB型"]
     
     @IBOutlet weak var pickerView: UIPickerView! {
         didSet {
@@ -51,7 +53,7 @@ extension BloodtypeCell: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return bloodtype[row]
+        return display[bloodtype[row]]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
