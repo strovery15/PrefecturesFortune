@@ -3,7 +3,7 @@
 import Foundation
 
 protocol MainPresentation {
-    func fortuneStart()
+    func fortuneStart(_ userData: UserData)
     func setData()
 }
 
@@ -14,7 +14,7 @@ class MainPresenter {
         let router: MainWireFrame
         
         //interactor
-        let getFortuneData: GetFortuneDataUseCase
+        let getPrefectureData: GetPrefectureDataUseCase
     }
     
     weak var view: MainView?
@@ -28,9 +28,9 @@ class MainPresenter {
 
 extension MainPresenter: MainPresentation {
     
-    func fortuneStart() {
+    func fortuneStart(_ userData: UserData) {
         print("fortuneStart")
-        dependency.getFortuneData.execute(parameter: "getFortuneData") { result in
+        dependency.getPrefectureData.execute(parameter: userData) { result in
             switch result {
             case .success(let string):
                 print(string)

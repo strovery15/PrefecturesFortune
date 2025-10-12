@@ -10,7 +10,7 @@ class AppDependencies {
             fatalError()
         }
         let router = MainRouter(view: viewController)
-        viewController.presenter = MainPresenter(view: viewController, dependency: .init(router: router, getFortuneData: GetFortuneDataInteractor()))
+        viewController.presenter = MainPresenter(view: viewController, dependency: .init(router: router, getPrefectureData: GetPrefectureDataInteractor()))
         return viewController
     }
     

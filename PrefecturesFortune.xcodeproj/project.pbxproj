@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891861282E9B5CE100DB18DF /* PrefectureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891861272E9B5CE100DB18DF /* PrefectureData.swift */; };
 		896BA0AB2E989C850026F5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AA2E989C850026F5A6 /* AppDelegate.swift */; };
 		896BA0AD2E989C850026F5A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AC2E989C850026F5A6 /* SceneDelegate.swift */; };
 		896BA0AF2E989C850026F5A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AE2E989C850026F5A6 /* MainViewController.swift */; };
@@ -14,7 +15,7 @@
 		896BA0B42E989C860026F5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896BA0B32E989C860026F5A6 /* Assets.xcassets */; };
 		896BA0B72E989C860026F5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BA0B52E989C860026F5A6 /* LaunchScreen.storyboard */; };
 		896EDF1B2E98C65800AD0664 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1A2E98C65800AD0664 /* MainRouter.swift */; };
-		896EDF1E2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1D2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift */; };
+		896EDF1E2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1D2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift */; };
 		896EDF222E98D07B00AD0664 /* DataInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF212E98D07B00AD0664 /* DataInput.storyboard */; };
 		896EDF242E98D0A700AD0664 /* DataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF232E98D0A700AD0664 /* DataInputViewController.swift */; };
 		896EDF272E98E7CD00AD0664 /* DataInputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891861272E9B5CE100DB18DF /* PrefectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureData.swift; sourceTree = "<group>"; };
 		896BA0A72E989C850026F5A6 /* PrefecturesFortune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrefecturesFortune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		896BA0AA2E989C850026F5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		896BA0AC2E989C850026F5A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		896BA0B62E989C860026F5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		896BA0B82E989C860026F5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		896EDF1A2E98C65800AD0664 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		896EDF1D2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFortuneDataInteractor.swift; sourceTree = "<group>"; };
+		896EDF1D2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrefectureDataInteractor.swift; sourceTree = "<group>"; };
 		896EDF212E98D07B00AD0664 /* DataInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataInput.storyboard; sourceTree = "<group>"; };
 		896EDF232E98D0A700AD0664 /* DataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputViewController.swift; sourceTree = "<group>"; };
 		896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputPresenter.swift; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 		896EDF1C2E98C8CF00AD0664 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				896EDF1D2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift */,
+				896EDF1D2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				896EDF3F2E9A3A6B00AD0664 /* UserData.swift */,
+				891861272E9B5CE100DB18DF /* PrefectureData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -323,7 +326,8 @@
 				896EDF432E9A434F00AD0664 /* CreateUserDataInteractor.swift in Sources */,
 				896BA0AF2E989C850026F5A6 /* MainViewController.swift in Sources */,
 				896BA0AB2E989C850026F5A6 /* AppDelegate.swift in Sources */,
-				896EDF1E2E98C9BB00AD0664 /* GetFortuneDataInteractor.swift in Sources */,
+				891861282E9B5CE100DB18DF /* PrefectureData.swift in Sources */,
+				896EDF1E2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift in Sources */,
 				896EDF3C2E990EEB00AD0664 /* BloodtypeCell.swift in Sources */,
 				896BA0AD2E989C850026F5A6 /* SceneDelegate.swift in Sources */,
 				896EDF342E990EAC00AD0664 /* NameCell.swift in Sources */,

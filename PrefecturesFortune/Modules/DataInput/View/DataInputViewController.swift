@@ -11,9 +11,9 @@ class DataInputViewController: UIViewController {
     
     var presenter: DataInputPresentation!
     
-    private var name: String = ""
+    private var name: String = "なまえ"
     private var birthday: Date = Date()
-    private var bloodtype: String = "A型"
+    private var bloodtype: String = "a"
     
     private let nameCellIdentifier = "NameCell"
     private let birthdayCellIdentifier = "BirthdayCell"
