@@ -4,6 +4,7 @@ import UIKit
 
 protocol MainView: AnyObject {
     
+    func appearResultDataView(_ prefectureData: PrefectureData)
 }
 
 class MainViewController: UIViewController {
@@ -34,6 +35,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    var resultDataView: ResultDataView! {
+        didSet {
+            configureResultDataView()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +49,9 @@ class MainViewController: UIViewController {
     
     func firstConfiguration() {
         currentDataView = CurrentDataView()
+        resultDataView = ResultDataView()
         view.addSubview(currentDataView)
+        view.addSubview(resultDataView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(notifyUserData(_:)), name: .notifyUserData, object: nil)
     }
@@ -72,6 +81,14 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainView {
     
+    func appearResultDataView(_ prefectureData: PrefectureData) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            resultDataView.prefectureData = prefectureData
+            resultDataView.isHidden = false
+        }
+    }
+    
 }
 
 extension MainViewController {
@@ -100,5 +117,13 @@ extension MainViewController {
         currentDataView.frame = CGRect(x: 10, y: 100, width: 250, height: 160)
     }
     
+    //resultDataView
+    func configureResultDataView() {
+        resultDataView.layer.borderColor = UIColor.systemBrown.cgColor
+        resultDataView.layer.borderWidth = 3
+        resultDataView.layer.cornerRadius = 10
+        resultDataView.frame = CGRect(x: 0, y: 200, width: 400, height: 450)
+        resultDataView.isHidden = true
+    }
 }
 
