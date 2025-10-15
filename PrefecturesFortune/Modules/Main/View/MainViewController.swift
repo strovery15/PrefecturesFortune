@@ -35,6 +35,18 @@ class MainViewController: UIViewController {
         }
     }
     
+    var blurView: UIVisualEffectView! {
+        didSet {
+            configureBlurView()
+        }
+    }
+    
+    @IBOutlet weak var closeButton: UIButton! {
+        didSet {
+            configureOpenButton()
+        }
+    }
+    
     var resultDataView: ResultDataView! {
         didSet {
             configureResultDataView()
@@ -48,10 +60,15 @@ class MainViewController: UIViewController {
     }
     
     func firstConfiguration() {
+        
         currentDataView = CurrentDataView()
+        blurView = UIVisualEffectView()
         resultDataView = ResultDataView()
+        
         view.addSubview(currentDataView)
+        view.addSubview(blurView)
         view.addSubview(resultDataView)
+        view.bringSubviewToFront(closeButton)
         
         NotificationCenter.default.addObserver(self, selector: #selector(notifyUserData(_:)), name: .notifyUserData, object: nil)
     }
@@ -72,6 +89,12 @@ class MainViewController: UIViewController {
         presenter.setData()
     }
     
+    @IBAction func closeButtonAction(_ sender: Any) {
+        resultDataView.isHidden = true
+        blurView.isHidden = true
+        closeButton.isHidden = true
+    }
+    
     @objc func notifyUserData(_ notification: Notification) {
         let data = notification.userInfo!["userData"] as! UserData
         self.userDate = data
@@ -82,11 +105,8 @@ class MainViewController: UIViewController {
 extension MainViewController: MainView {
     
     func appearResultDataView(_ prefectureData: PrefectureData) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            resultDataView.prefectureData = prefectureData
-            resultDataView.isHidden = false
-        }
+        resultDataView.prefectureData = prefectureData
+        slotAnimation()
     }
     
 }
@@ -117,13 +137,84 @@ extension MainViewController {
         currentDataView.frame = CGRect(x: 10, y: 100, width: 250, height: 160)
     }
     
+    //blurView
+    func configureBlurView() {
+        let blur = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        blurView.effect = blur
+        blurView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        blurView.clipsToBounds = true
+        blurView.isHidden = true
+    }
+    
     //resultDataView
     func configureResultDataView() {
         resultDataView.layer.borderColor = UIColor.systemBrown.cgColor
-        resultDataView.layer.borderWidth = 3
-        resultDataView.layer.cornerRadius = 10
-        resultDataView.frame = CGRect(x: 0, y: 200, width: 400, height: 450)
+        resultDataView.layer.borderWidth = 5
+        resultDataView.layer.cornerRadius = 15
+        resultDataView.frame = CGRect(x: 0, y: 0, width: 280, height: 280)
+        resultDataView.center = CGPoint(x: -140, y: UIScreen.main.bounds.height/2)
         resultDataView.isHidden = true
     }
+    
+    //openButton
+    func configureOpenButton() {
+        closeButton.setTitle("閉じる", for: .normal)
+        closeButton.tintColor = .white
+        closeButton.backgroundColor = .systemBrown
+        closeButton.layer.cornerRadius = 8
+        closeButton.isHidden = true
+    }
+    
 }
+
+extension MainViewController {
+    
+    func slotAnimation() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            resultDataView.front()
+            resultDataView.isHidden = false
+            blurView.isHidden = false
+            ResultDataView.animate(withDuration: 0.125, delay: 0, options: [.curveLinear], animations: {
+                self.resultDataView.center.x += (UIScreen.main.bounds.width + 280)
+            }, completion: { _ in
+                self.resultDataView.center.x = -140
+                ResultDataView.animate(withDuration: 0.25, delay: 0, options: [.curveLinear], animations: {
+                    self.resultDataView.center.x += (UIScreen.main.bounds.width + 280)
+                }, completion: { _ in
+                    self.resultDataView.center.x = -140
+                    ResultDataView.animate(withDuration: 0.375, delay: 0, options: [.curveLinear], animations: {
+                        self.resultDataView.center.x += (UIScreen.main.bounds.width + 280)
+                    }, completion: { _ in
+                        self.resultDataView.center.x = -140
+                        ResultDataView.animate(withDuration: 0.625, delay: 0, options: [.curveLinear], animations: {
+                            self.resultDataView.center.x += (UIScreen.main.bounds.width + 280)
+                        }, completion: { _ in
+                            self.resultDataView.center.x = -140
+                            ResultDataView.animate(withDuration: 1.0, delay: 0, options: [.curveLinear], animations: {
+                                self.resultDataView.center.x += (UIScreen.main.bounds.width/2 + 140)
+                            }, completion: { _ in
+                                print("win")
+                                self.flipAnimation()
+                                
+                            })
+                        })
+                    })
+                })
+            })
+        }
+    }
+    
+    func flipAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+            ResultDataView.transition(with: self.resultDataView, duration: 0.5, options: [.transitionFlipFromLeft], animations: {
+                self.resultDataView.back()
+            }, completion: { _ in
+                self.closeButton.isHidden = false
+            })
+        }
+    }
+}
+
 

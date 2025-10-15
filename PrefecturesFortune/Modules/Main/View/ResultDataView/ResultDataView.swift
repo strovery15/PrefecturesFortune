@@ -10,6 +10,9 @@ class ResultDataView: UIView {
         }
     }
     
+    var front: (() -> Void)!
+    var back: (() -> Void)!
+    
     @IBOutlet var view: UIView!
     
     @IBOutlet weak var prefectureNameLabel: UILabel!
@@ -23,6 +26,13 @@ class ResultDataView: UIView {
     @IBOutlet weak var prefectureLogoImageView: UIImageView!
     
     @IBOutlet weak var prefectureBriefTextView: UITextView!
+    
+    @IBOutlet weak var backViewLabel: UILabel! {
+        didSet {
+            configureBackViewLabel()
+        }
+    }
+    
     
     init() {
         super.init(frame: .zero)
@@ -48,30 +58,59 @@ class ResultDataView: UIView {
     
     func firstConfiguration() {
         
+        front = { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                backViewLabel.isHidden = false
+            }
+        }
+        
+        back = { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                backViewLabel.isHidden = true
+            }
+        }
+        
+        
+        
     }
     
     func update() {
-        prefectureNameLabel.text = prefectureData.name
-        
-        capitalLabel.text = prefectureData.capital
-        
-        if let citizenDay = prefectureData.citizen_day {
-            citizenDayLabel.text = "\(citizenDay.month)月\(citizenDay.day)日"
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            prefectureNameLabel.text = prefectureData.name
+            
+            capitalLabel.text = prefectureData.capital
+            
+            if let citizenDay = prefectureData.citizen_day {
+                citizenDayLabel.text = "\(citizenDay.month)月\(citizenDay.day)日"
+            }
+            
+            if prefectureData.has_coast_line {
+                hasCoastLabel.text = "海に面している県"
+            } else {
+                hasCoastLabel.text = "内陸の県"
+            }
+            
+            let logoImage = UIImage(urlString: prefectureData.logo_url)
+            prefectureLogoImageView.image = logoImage
+            
+            prefectureBriefTextView.text = prefectureData.brief
         }
-        
-        if prefectureData.has_coast_line {
-            hasCoastLabel.text = "海に面している県"
-        } else {
-            hasCoastLabel.text = "内陸の県"
-        }
-        
-        let logoImage = UIImage(urlString: "httpbabubabu")
-        prefectureLogoImageView.image = logoImage
-        
-        prefectureBriefTextView.text = prefectureData.brief
         
     }
     
+}
+
+extension ResultDataView {
+    
+    //backViewLabel
+    func configureBackViewLabel() {
+        backViewLabel.backgroundColor = .systemGreen
+        backViewLabel.text = "わい"
+        backViewLabel.font = UIFont.systemFont(ofSize: 30)
+    }
 }
 
 extension UIImage {
