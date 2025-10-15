@@ -3,11 +3,11 @@
 import Foundation
 
 protocol GetPrefectureDataUseCase {
-    func execute(parameter: UserData, completion: ((Result<PrefectureData, Never>) -> ()))
+    func execute(parameter: UserData, completion: @escaping ((Result<PrefectureData, Never>) -> ()))
 }
 
 class GetPrefectureDataInteractor: GetPrefectureDataUseCase {
-    func execute(parameter: UserData, completion: ((Result<PrefectureData, Never>) -> ())) {
+    func execute(parameter: UserData, completion: @escaping ((Result<PrefectureData, Never>) -> ())) {
         print("come")
         let baseURL = "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud"
         let endPoint = "/my_fortune"
@@ -42,7 +42,7 @@ class GetPrefectureDataInteractor: GetPrefectureDataUseCase {
                 let prefectureData: PrefectureData
                 do  {
                     prefectureData = try JSONDecoder().decode(PrefectureData.self, from: data)
-                    print(prefectureData)
+                    completion(.success(prefectureData))
                 } catch {
                     print("decode-error")
                 }

@@ -30,10 +30,11 @@ extension MainPresenter: MainPresentation {
     
     func fortuneStart(_ userData: UserData) {
         print("fortuneStart")
-        dependency.getPrefectureData.execute(parameter: userData) { result in
+        dependency.getPrefectureData.execute(parameter: userData) { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case .success(let string):
-                print(string)
+            case .success(let prefectureData):
+                view?.appearResultDataView(prefectureData)
             }
         }
     }
