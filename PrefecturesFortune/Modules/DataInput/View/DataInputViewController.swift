@@ -147,7 +147,7 @@ extension DataInputViewController {
     func configureAddButton() {
         addButton.setTitle("追加", for: .normal)
         addButton.tintColor = .white
-        addButton.backgroundColor = .systemPurple
+        addButton.backgroundColor = .systemBrown
         addButton.layer.cornerRadius = 5
     }
     
