@@ -19,9 +19,11 @@
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ah4-c4-UeT">
                         <rect key="frame" x="0.0" y="52" width="295" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <nil key="textColor"/>
                         <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="20"/>
                         <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="textFieldChange:" destination="KGk-i7-Jjw" eventType="editingChanged" id="WaD-m2-BkQ"/>
+                        </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U27-9k-wf8">
                         <rect key="frame" x="72" y="17" width="42" height="21"/>

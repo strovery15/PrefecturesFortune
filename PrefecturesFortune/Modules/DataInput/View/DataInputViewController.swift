@@ -41,7 +41,6 @@ class DataInputViewController: UIViewController {
         super.viewDidLoad()
 
         firstConfiguration()
-       
     }
     
     func firstConfiguration() {
@@ -94,7 +93,11 @@ class DataInputViewController: UIViewController {
     
     @objc func notifyName(_ notification: Notification) {
         let name = notification.userInfo!["name"] as! String
-        self.name = name
+        if name.isEmpty {
+            self.name = "なまえ"
+        } else {
+            self.name = name
+        }
     }
     
     @objc func notifyBirthday(_ notification: Notification) {
@@ -113,7 +116,6 @@ class DataInputViewController: UIViewController {
 extension DataInputViewController: DataInputView {
     
     func dataInput(_ userData: UserData) {
-        print(userData)
         NotificationCenter.default.post(name: .notifyUserData, object: nil, userInfo: ["userData": userData])
         dismiss(animated: true)
     }

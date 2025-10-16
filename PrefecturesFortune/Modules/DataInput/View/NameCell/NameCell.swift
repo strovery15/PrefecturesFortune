@@ -59,9 +59,12 @@ class NameCell: UITableViewCell {
         textField.rightAnchor.constraint(equalTo: checkButton.leftAnchor).isActive = true
     }
     
+    @IBAction func textFieldChange(_ sender: Any) {
+        NotificationCenter.default.post(name: .notifyName, object: nil, userInfo: ["name": textField.text!])
+    }
+    
     @IBAction func checkButtonAction(_ sender: Any) {
         textField.resignFirstResponder()
-        NotificationCenter.default.post(name: .notifyName, object: nil, userInfo: ["name": textField.text!])
     }
     
 }

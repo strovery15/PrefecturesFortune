@@ -4,6 +4,7 @@ import Foundation
 import UIKit
 
 protocol MainWireFrame {
+    
     func presentDataInputView()
 }
 
@@ -16,7 +17,6 @@ class MainRouter: MainWireFrame {
     }
     
     func presentDataInputView() {
-        print("presentDataInputView")
         let appDependencies = AppDependencies()
         let viewController = appDependencies.assembleDataInputModule()
         mainViewController?.navigationController?.present(viewController, animated: true)
