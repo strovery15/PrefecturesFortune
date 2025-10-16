@@ -94,7 +94,9 @@ class DataInputViewController: UIViewController {
     
     @objc func notifyName(_ notification: Notification) {
         let name = notification.userInfo!["name"] as! String
-        if name.isEmpty == false {
+        if name.isEmpty {
+            self.name = "なまえ"
+        } else {
             self.name = name
         }
     }
