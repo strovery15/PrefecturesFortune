@@ -4,7 +4,8 @@ import UIKit
 
 protocol MainView: AnyObject {
     
-    func appearResultDataView(_ prefectureData: PrefectureData)
+    func showResultDataView(_ prefectureData: PrefectureData)
+    func showError()
 }
 
 class MainViewController: UIViewController {
@@ -127,7 +128,7 @@ class MainViewController: UIViewController {
         if let userData = userDate {
             presenter.fortuneStart(userData)
         } else {
-            let alertController = UIAlertController(title: "データがセットされていません", message: "データをセットしてください", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "スタートできません", message: "データをセットしてスタートしてください", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default)
             alertController.addAction(okAction)
             present(alertController, animated: true)
@@ -153,9 +154,20 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainView {
     
-    func appearResultDataView(_ prefectureData: PrefectureData) {
+    func showResultDataView(_ prefectureData: PrefectureData) {
         resultDataView.prefectureData = prefectureData
         slotAnimation()
+    }
+    
+    func showError() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let alertController = UIAlertController(title: "通信エラー", message: "データを取得できませでした", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
+        }
+        
     }
     
 }
