@@ -2,25 +2,36 @@
 
 import Foundation
 
+enum GettingError: Error {
+    case badurl
+    case encode
+    case decode
+    case session
+}
+
 protocol GetPrefectureDataUseCase {
-    func execute(parameter: UserData, completion: @escaping ((Result<PrefectureData, Never>) -> ()))
+    func execute(parameter: UserData, completion: @escaping ((Result<PrefectureData, GettingError>) -> ()))
 }
 
 class GetPrefectureDataInteractor: GetPrefectureDataUseCase {
-    func execute(parameter: UserData, completion: @escaping ((Result<PrefectureData, Never>) -> ())) {
-        print("come")
+    func execute(parameter: UserData, completion: @escaping ((Result<PrefectureData, GettingError>) -> ())) {
+        
         let baseURL = "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud"
         let endPoint = "/my_fortune"
         let apiVersion = "v1"
         
         let apiURL = baseURL + endPoint
-        guard let url = URL(string: apiURL) else { return }
+        guard let url = URL(string: apiURL) else {
+            completion(.failure(.badurl))
+            return
+        }
         
         var userData: Data?
         do {
             userData = try JSONEncoder().encode(parameter)
         } catch {
-            print("encode-error")
+            completion(.failure(GettingError.encode))
+            return
         }
         
         var request = URLRequest(url: url)
@@ -30,12 +41,17 @@ class GetPrefectureDataInteractor: GetPrefectureDataUseCase {
         request.httpBody = userData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error)
+            
+            if error != nil {
+                completion(.failure(.session))
+                return
             }
             
             if let response = response as? HTTPURLResponse {
-                print("statusCode\(response.statusCode)")
+                if response.statusCode < 200 && response.statusCode >= 300 {
+                    completion(.failure(.session))
+                    return
+                }
             }
             
             if let data = data {
@@ -43,8 +59,10 @@ class GetPrefectureDataInteractor: GetPrefectureDataUseCase {
                 do  {
                     prefectureData = try JSONDecoder().decode(PrefectureData.self, from: data)
                     completion(.success(prefectureData))
+                    return
                 } catch {
-                    print("decode-error")
+                    completion(.failure(.session))
+                    return
                 }
             }
         }

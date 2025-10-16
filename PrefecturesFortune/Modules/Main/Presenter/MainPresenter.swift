@@ -29,12 +29,27 @@ class MainPresenter {
 extension MainPresenter: MainPresentation {
     
     func fortuneStart(_ userData: UserData) {
-        print("fortuneStart")
+        
         dependency.getPrefectureData.execute(parameter: userData) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let prefectureData):
-                view?.appearResultDataView(prefectureData)
+                view?.showResultDataView(prefectureData)
+            case .failure(let error):
+                switch error {
+                case .badurl:
+                    print("error_badurl")
+                    view?.showError()
+                case .encode:
+                    print("error_encode")
+                    view?.showError()
+                case .decode:
+                    print("error_decode")
+                    view?.showError()
+                case .session:
+                    print("error_session")
+                    view?.showError()
+                }
             }
         }
     }
