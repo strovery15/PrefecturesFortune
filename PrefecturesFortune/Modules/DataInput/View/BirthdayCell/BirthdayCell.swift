@@ -18,7 +18,6 @@ class BirthdayCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         firstConfiguration()
     }
 
@@ -46,6 +45,7 @@ class BirthdayCell: UITableViewCell {
         datePicker.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
         datePicker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
         datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        datePicker.heightAnchor.constraint(equalToConstant: 216 * UIScreen.main.bounds.size.width / 390).isActive = true
     }
     
     @IBAction func datePickerChange(_ sender: Any) {

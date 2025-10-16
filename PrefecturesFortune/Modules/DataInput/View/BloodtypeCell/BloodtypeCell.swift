@@ -23,7 +23,6 @@ class BloodtypeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         firstConfiguration()
     }
 
@@ -51,7 +50,7 @@ class BloodtypeCell: UITableViewCell {
         pickerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
         pickerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
         pickerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
-        pickerView.heightAnchor.constraint(equalToConstant: 180 * UIScreen.main.bounds.size.width / 390).isActive = true
+        pickerView.heightAnchor.constraint(equalToConstant: 216 * UIScreen.main.bounds.size.width / 390).isActive = true
     }
     
 }
@@ -63,14 +62,12 @@ extension BloodtypeCell {
         stickerLabel.text = "血液型"
         stickerLabel.textColor = .systemBrown
         stickerLabel.textAlignment = NSTextAlignment.center
-//        stickerLabel.backgroundColor = .red
     }
     
     //pickerView
     func configurePickerView() {
         pickerView.dataSource = self
         pickerView.delegate = self
-        
     }
 }
 
@@ -81,17 +78,14 @@ extension BloodtypeCell: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         return bloodtype.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return display[bloodtype[row]]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         NotificationCenter.default.post(name: .notifyBloodtype, object: nil, userInfo: ["bloodtype": bloodtype[row]])
     }
 }

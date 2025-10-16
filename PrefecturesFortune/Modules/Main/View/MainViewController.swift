@@ -30,6 +30,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var closeButton: UIButton! {
+        didSet {
+            configureCloseButton()
+        }
+    }
+    
     var currentDataView: CurrentDataView! {
         didSet {
             configureCurrentDataView()
@@ -39,12 +45,6 @@ class MainViewController: UIViewController {
     var blurView: UIVisualEffectView! {
         didSet {
             configureBlurView()
-        }
-    }
-    
-    @IBOutlet weak var closeButton: UIButton! {
-        didSet {
-            configureCloseButton()
         }
     }
     
@@ -120,12 +120,13 @@ class MainViewController: UIViewController {
         blurView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         blurView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
     }
     
     @IBAction func startButtonAction(_ sender: Any) {
         
         if let userData = userDate {
+            startButton.isEnabled = false
+            setDataButton.isEnabled = false
             presenter.fortuneStart(userData)
         } else {
             let alertController = UIAlertController(title: "スタートできません", message: "データをセットしてスタートしてください", preferredStyle: .alert)
@@ -143,6 +144,8 @@ class MainViewController: UIViewController {
         resultDataView.isHidden = true
         blurView.isHidden = true
         closeButton.isHidden = true
+        startButton.isEnabled = true
+        setDataButton.isEnabled = true
     }
     
     @objc func notifyUserData(_ notification: Notification) {

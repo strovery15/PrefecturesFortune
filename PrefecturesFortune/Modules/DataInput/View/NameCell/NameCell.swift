@@ -63,7 +63,6 @@ class NameCell: UITableViewCell {
         NotificationCenter.default.post(name: .notifyName, object: nil, userInfo: ["name": textField.text!])
     }
     
-    
     @IBAction func checkButtonAction(_ sender: Any) {
         textField.resignFirstResponder()
     }

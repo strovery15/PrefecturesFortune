@@ -57,16 +57,19 @@ class ResultDataView: UIView {
             configureBackLabel1()
         }
     }
+    
     var backLabel2: UILabel! {
         didSet {
             configureBackLabel2()
         }
     }
+    
     var backLabel3: UILabel! {
         didSet {
             configureBackLabel3()
         }
     }
+    
     var backLabel4: UILabel! {
         didSet {
             configureBackLabel4()

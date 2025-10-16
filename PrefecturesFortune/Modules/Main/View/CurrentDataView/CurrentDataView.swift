@@ -110,7 +110,6 @@ class CurrentDataView: UIView {
         let todaMonth = userData.today.month
         let todaDay = userData.today.day
         todayLabel.text = "\u{3000}日付\u{3000}\u{3000}\(todaYear)年\(todaMonth)月\(todaDay)日"
-        
     }
 
 }

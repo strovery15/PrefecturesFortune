@@ -3,6 +3,7 @@
 import Foundation
 
 protocol MainPresentation {
+    
     func fortuneStart(_ userData: UserData)
     func setData()
 }
@@ -29,9 +30,9 @@ class MainPresenter {
 extension MainPresenter: MainPresentation {
     
     func fortuneStart(_ userData: UserData) {
-        
         dependency.getPrefectureData.execute(parameter: userData) { [weak self] result in
             guard let self = self else { return }
+            
             switch result {
             case .success(let prefectureData):
                 view?.showResultDataView(prefectureData)
@@ -55,7 +56,6 @@ extension MainPresenter: MainPresentation {
     }
     
     func setData() {
-         print("setData")
         dependency.router.presentDataInputView()
     }
 }
