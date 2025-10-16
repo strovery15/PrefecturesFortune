@@ -104,8 +104,8 @@ class MainViewController: UIViewController {
         resultDataView.translatesAutoresizingMaskIntoConstraints = false
         resultDataView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         resultDataView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        resultDataView.widthAnchor.constraint(equalToConstant: 280 * UIScreen.main.bounds.size.width / 390).isActive = true
-        resultDataView.heightAnchor.constraint(equalToConstant: 280 * UIScreen.main.bounds.size.width / 390).isActive = true
+        resultDataView.widthAnchor.constraint(equalToConstant: 330 * UIScreen.main.bounds.size.width / 390).isActive = true
+        resultDataView.heightAnchor.constraint(equalToConstant: 330 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //currentDataView
         currentDataView.translatesAutoresizingMaskIntoConstraints = false
@@ -234,25 +234,25 @@ extension MainViewController {
             resultDataView.front()
             resultDataView.isHidden = false
             blurView.isHidden = false
-            resultDataView.center = CGPoint(x: -140 * UIScreen.main.bounds.size.width / 390, y: UIScreen.main.bounds.height/2)
+            resultDataView.center = CGPoint(x: -165 * UIScreen.main.bounds.size.width / 390, y: UIScreen.main.bounds.height/2)
             ResultDataView.animate(withDuration: 0.125, delay: 0, options: [.curveLinear], animations: {
-                self.resultDataView.center.x += (UIScreen.main.bounds.width + 280 * UIScreen.main.bounds.size.width / 390)
+                self.resultDataView.center.x += (UIScreen.main.bounds.width + 330 * UIScreen.main.bounds.size.width / 390)
             }, completion: { _ in
-                self.resultDataView.center.x = -140 * UIScreen.main.bounds.size.width / 390
+                self.resultDataView.center.x = -165 * UIScreen.main.bounds.size.width / 390
                 ResultDataView.animate(withDuration: 0.25, delay: 0, options: [.curveLinear], animations: {
-                    self.resultDataView.center.x += (UIScreen.main.bounds.width + 280 * UIScreen.main.bounds.size.width / 390)
+                    self.resultDataView.center.x += (UIScreen.main.bounds.width + 330 * UIScreen.main.bounds.size.width / 390)
                 }, completion: { _ in
-                    self.resultDataView.center.x = -140 * UIScreen.main.bounds.size.width / 390
+                    self.resultDataView.center.x = -165 * UIScreen.main.bounds.size.width / 390
                     ResultDataView.animate(withDuration: 0.375, delay: 0, options: [.curveLinear], animations: {
-                        self.resultDataView.center.x += (UIScreen.main.bounds.width + 280 * UIScreen.main.bounds.size.width / 390)
+                        self.resultDataView.center.x += (UIScreen.main.bounds.width + 330 * UIScreen.main.bounds.size.width / 390)
                     }, completion: { _ in
-                        self.resultDataView.center.x = -140 * UIScreen.main.bounds.size.width / 390
+                        self.resultDataView.center.x = -165 * UIScreen.main.bounds.size.width / 390
                         ResultDataView.animate(withDuration: 0.625, delay: 0, options: [.curveLinear], animations: {
-                            self.resultDataView.center.x += (UIScreen.main.bounds.width + 280 * UIScreen.main.bounds.size.width / 390)
+                            self.resultDataView.center.x += (UIScreen.main.bounds.width + 330 * UIScreen.main.bounds.size.width / 390)
                         }, completion: { _ in
-                            self.resultDataView.center.x = -140 * UIScreen.main.bounds.size.width / 390
+                            self.resultDataView.center.x = -165 * UIScreen.main.bounds.size.width / 390
                             ResultDataView.animate(withDuration: 1.0, delay: 0, options: [.curveLinear], animations: {
-                                self.resultDataView.center.x += (UIScreen.main.bounds.width/2 + 140 * UIScreen.main.bounds.size.width / 390)
+                                self.resultDataView.center.x += (UIScreen.main.bounds.width/2 + 165 * UIScreen.main.bounds.size.width / 390)
                             }, completion: { _ in
                                 self.flipAnimation()
                                 
