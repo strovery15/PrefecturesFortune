@@ -5,6 +5,6 @@ PrefectureFortune
 Xcode 15.1+  
 Swift 5.9.2+
 # 環境構築手順
-1. リポジトリからPrefectureFortuneをクローン
+1. リポジトリからPrefectureFortuneのmainブランチをクローン
 2. PrefectureFortune.xcodeprojを開く
 3. プロジェクト実行
