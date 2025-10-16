@@ -64,7 +64,6 @@ class MainViewController: UIViewController {
         currentDataView = CurrentDataView()
         blurView = UIVisualEffectView()
         resultDataView = ResultDataView()
-        
         view.addSubview(currentDataView)
         view.addSubview(blurView)
         view.addSubview(resultDataView)
