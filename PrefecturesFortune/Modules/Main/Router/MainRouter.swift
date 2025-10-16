@@ -19,7 +19,6 @@ class MainRouter: MainWireFrame {
         print("presentDataInputView")
         let appDependencies = AppDependencies()
         let viewController = appDependencies.assembleDataInputModule()
-        viewController.modalPresentationStyle = .fullScreen
         mainViewController?.navigationController?.present(viewController, animated: true)
     }
 }

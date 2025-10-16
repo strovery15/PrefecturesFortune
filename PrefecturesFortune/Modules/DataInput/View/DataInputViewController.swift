@@ -46,9 +46,42 @@ class DataInputViewController: UIViewController {
     
     func firstConfiguration() {
         
+        view.backgroundColor = .systemGray6
+        if let sheet = self.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { context in
+                context.maximumDetentValue * 0.88
+            })]
+        }
+        
+        configureLayout()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(notifyName(_:)), name: .notifyName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notifyBirthday(_:)), name: .notifyBirthday, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notifyBloodtype(_:)), name: .notifyBloodtype, object: nil)
+    }
+    
+    func configureLayout() {
+        
+        //closeButton
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 50 * UIScreen.main.bounds.size.width / 390).isActive = true
+        closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
+        
+        //addButton
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        addButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 50 * UIScreen.main.bounds.size.width / 390).isActive = true
+        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30 * UIScreen.main.bounds.size.width / 390).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 80 * UIScreen.main.bounds.size.width / 390).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
+        
+        //tableView
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
@@ -93,6 +126,7 @@ extension DataInputViewController {
         tableView.register(nameCellnib(), forCellReuseIdentifier: nameCellIdentifier)
         tableView.register(birthdayCellnib(), forCellReuseIdentifier: birthdayCellIdentifier)
         tableView.register(bloodtypeCellnib(), forCellReuseIdentifier: bloodtypeCellIdentifier)
+        tableView.backgroundColor = .systemGray6
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -113,21 +147,19 @@ extension DataInputViewController {
     func configureAddButton() {
         addButton.setTitle("追加", for: .normal)
         addButton.tintColor = .white
-        addButton.backgroundColor = .systemPurple
-        addButton.layer.cornerRadius = 5
+        addButton.backgroundColor = .systemBrown
+        addButton.layer.cornerRadius = 5 * UIScreen.main.bounds.size.width / 390
     }
     
     //closeButton
     func configureCloseButton() {
         closeButton.setTitle("", for: .normal)
         closeButton.tintColor = .systemGray
-        closeButton.backgroundColor = .systemGray5
-        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 25, weight: .medium, scale: .small)
+        closeButton.backgroundColor = .systemGray4
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 25 * UIScreen.main.bounds.size.width / 390, weight: .medium, scale: .small)
         let systemImage = UIImage(systemName: "xmark", withConfiguration: symbolConfiguration)
         closeButton.setImage(systemImage, for: .normal)
-        closeButton.layer.cornerRadius = 17
-        closeButton.frame = CGRect(x: 20, y: 60, width: 34, height: 34)
-        
+        closeButton.layer.cornerRadius = 20 * UIScreen.main.bounds.size.width / 390
     }
 }
 
