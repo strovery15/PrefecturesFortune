@@ -40,18 +40,18 @@ class BloodtypeCell: UITableViewCell {
         
         //stickerLabel
         stickerLabel.translatesAutoresizingMaskIntoConstraints = false
-        stickerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        stickerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        stickerLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        stickerLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        stickerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.widthAnchor.constraint(equalToConstant: 70 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //pickerView
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         pickerView.topAnchor.constraint(equalTo: stickerLabel.bottomAnchor).isActive = true
-        pickerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        pickerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
-        pickerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        pickerView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        pickerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        pickerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        pickerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        pickerView.heightAnchor.constraint(equalToConstant: 180 * UIScreen.main.bounds.size.width / 390).isActive = true
     }
     
 }

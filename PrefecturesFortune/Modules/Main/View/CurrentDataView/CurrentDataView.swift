@@ -71,21 +71,21 @@ class CurrentDataView: UIView {
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //birthdayLabel
         birthdayLabel.translatesAutoresizingMaskIntoConstraints = false
         birthdayLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         birthdayLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         birthdayLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        birthdayLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        birthdayLabel.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //bloodtypeLabel
         bloodtypeLabel.translatesAutoresizingMaskIntoConstraints = false
         bloodtypeLabel.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
         bloodtypeLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         bloodtypeLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        bloodtypeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        bloodtypeLabel.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //todayLabel
         todayLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,7 @@ class CurrentDataView: UIView {
         todayLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         todayLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         todayLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        todayLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        todayLabel.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
     }
     
     func updateData() {
@@ -110,8 +110,6 @@ class CurrentDataView: UIView {
         let todaMonth = userData.today.month
         let todaDay = userData.today.day
         todayLabel.text = "\u{3000}日付\u{3000}\u{3000}\(todaYear)年\(todaMonth)月\(todaDay)日"
-        
-        
         
     }
 

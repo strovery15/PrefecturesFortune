@@ -40,22 +40,22 @@ class NameCell: UITableViewCell {
         
         //stickerLabel
         stickerLabel.translatesAutoresizingMaskIntoConstraints = false
-        stickerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        stickerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        stickerLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        stickerLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        stickerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.widthAnchor.constraint(equalToConstant: 70 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //checkButton
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         checkButton.topAnchor.constraint(equalTo: stickerLabel.bottomAnchor).isActive = true
-        checkButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
-        checkButton.widthAnchor.constraint(equalToConstant: 34).isActive = true
-        checkButton.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        checkButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        checkButton.widthAnchor.constraint(equalToConstant: 34 * UIScreen.main.bounds.size.width / 390).isActive = true
+        checkButton.heightAnchor.constraint(equalToConstant: 34 * UIScreen.main.bounds.size.width / 390).isActive = true
         //textField
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.topAnchor.constraint(equalTo: stickerLabel.bottomAnchor).isActive = true
-        textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        textField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        textField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
         textField.rightAnchor.constraint(equalTo: checkButton.leftAnchor).isActive = true
     }
     
@@ -73,16 +73,14 @@ extension NameCell {
         stickerLabel.text = "名前"
         stickerLabel.textColor = .systemBrown
         stickerLabel.textAlignment = NSTextAlignment.center
-//        stickerLabel.backgroundColor = .red
     }
     
     //textField
     func configureTextField() {
-        textField.font = UIFont.systemFont(ofSize: 20)
+        textField.font = UIFont.systemFont(ofSize: 20 * UIScreen.main.bounds.size.width / 390)
         textField.placeholder = "なまえ"
-        textField.layer.borderWidth = 1
+        textField.layer.borderWidth = 1 * UIScreen.main.bounds.size.width / 390
         textField.layer.borderColor = UIColor.systemGray.cgColor
-//        textField.backgroundColor = .blue
     }
     
     //checkButton
@@ -91,8 +89,7 @@ extension NameCell {
         let systemImage = UIImage(systemName: "checkmark.circle", withConfiguration: symbolConfiguration)
         checkButton.setTitle("", for: .normal)
         checkButton.setImage(systemImage, for: .normal)
-        checkButton.layer.cornerRadius = 17
+        checkButton.layer.cornerRadius = 17 * UIScreen.main.bounds.size.width / 390
         checkButton.tintColor = .systemBrown
-//        checkButton.backgroundColor = .systemGray
     }
 }

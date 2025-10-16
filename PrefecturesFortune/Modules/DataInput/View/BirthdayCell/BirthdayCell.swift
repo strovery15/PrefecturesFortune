@@ -35,17 +35,17 @@ class BirthdayCell: UITableViewCell {
         
         //stickerLabel
         stickerLabel.translatesAutoresizingMaskIntoConstraints = false
-        stickerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        stickerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        stickerLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        stickerLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        stickerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.widthAnchor.constraint(equalToConstant: 70 * UIScreen.main.bounds.size.width / 390).isActive = true
+        stickerLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //datePicker
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.topAnchor.constraint(equalTo: stickerLabel.bottomAnchor).isActive = true
-        datePicker.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        datePicker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
-        datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        datePicker.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        datePicker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
     }
     
     @IBAction func datePickerChange(_ sender: Any) {

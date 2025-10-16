@@ -15,9 +15,17 @@ class ResultDataView: UIView {
     
     @IBOutlet var view: UIView!
     
-    @IBOutlet weak var prefectureNameLabel: UILabel!
+    @IBOutlet weak var prefectureNameLabel: UILabel! {
+        didSet {
+            configurePrefectureNameLabel()
+        }
+    }
     
-    @IBOutlet weak var capitalLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel! {
+        didSet {
+            configureCapitalLabel()
+        }
+    }
     
     @IBOutlet weak var citizenDayLabel: UILabel! {
         didSet {
@@ -25,7 +33,11 @@ class ResultDataView: UIView {
         }
     }
     
-    @IBOutlet weak var hasCoastLabel: UILabel!
+    @IBOutlet weak var hasCoastLabel: UILabel! {
+        didSet {
+            configureHasCoastLabel()
+        }
+    }
     
     @IBOutlet weak var prefectureLogoImageView: UIImageView! {
         didSet {
@@ -82,7 +94,7 @@ class ResultDataView: UIView {
     
     func firstConfiguration() {
         
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 15 * UIScreen.main.bounds.size.width / 390
         
         backLabel1 = UILabel()
         backLabel2 = UILabel()
@@ -121,79 +133,79 @@ class ResultDataView: UIView {
         
         //prefectureLogoImageView
         prefectureLogoImageView.translatesAutoresizingMaskIntoConstraints = false
-        prefectureLogoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        prefectureLogoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        prefectureLogoImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        prefectureLogoImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        prefectureLogoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureLogoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureLogoImageView.widthAnchor.constraint(equalToConstant: 120 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureLogoImageView.heightAnchor.constraint(equalToConstant: 120 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //prefectureNameLabel
         prefectureNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        prefectureNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        prefectureNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        prefectureNameLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10).isActive = true
-        prefectureNameLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
-        prefectureNameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        prefectureNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureNameLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureNameLabel.widthAnchor.constraint(equalToConstant: 160 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureNameLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //capitalLabel
         capitalLabel.translatesAutoresizingMaskIntoConstraints = false
         capitalLabel.topAnchor.constraint(equalTo: prefectureNameLabel.bottomAnchor).isActive = true
-        capitalLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10).isActive = true
-        capitalLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        capitalLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
-        capitalLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        capitalLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        capitalLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        capitalLabel.widthAnchor.constraint(equalToConstant: 160 * UIScreen.main.bounds.size.width / 390).isActive = true
+        capitalLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //citizenDayLabel
         citizenDayLabel.translatesAutoresizingMaskIntoConstraints = false
         citizenDayLabel.topAnchor.constraint(equalTo: capitalLabel.bottomAnchor).isActive = true
-        citizenDayLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10).isActive = true
-        citizenDayLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        citizenDayLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
-        citizenDayLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        citizenDayLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        citizenDayLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        citizenDayLabel.widthAnchor.constraint(equalToConstant: 160 * UIScreen.main.bounds.size.width / 390).isActive = true
+        citizenDayLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //hasCoastLabel
         hasCoastLabel.translatesAutoresizingMaskIntoConstraints = false
         hasCoastLabel.topAnchor.constraint(equalTo: citizenDayLabel.bottomAnchor).isActive = true
-        hasCoastLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10).isActive = true
-        hasCoastLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        hasCoastLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
-        hasCoastLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        hasCoastLabel.leftAnchor.constraint(equalTo: prefectureLogoImageView.rightAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        hasCoastLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        hasCoastLabel.widthAnchor.constraint(equalToConstant: 160 * UIScreen.main.bounds.size.width / 390).isActive = true
+        hasCoastLabel.heightAnchor.constraint(equalToConstant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //prefectureBriefTextView
         prefectureBriefTextView.translatesAutoresizingMaskIntoConstraints = false
-        prefectureBriefTextView.topAnchor.constraint(equalTo: prefectureLogoImageView.bottomAnchor, constant: 10).isActive = true
-        prefectureBriefTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        prefectureBriefTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        prefectureBriefTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-        prefectureBriefTextView.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        prefectureBriefTextView.widthAnchor.constraint(equalToConstant: 260).isActive = true
+        prefectureBriefTextView.topAnchor.constraint(equalTo: prefectureLogoImageView.bottomAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureBriefTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureBriefTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureBriefTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureBriefTextView.heightAnchor.constraint(equalToConstant: 160 * UIScreen.main.bounds.size.width / 390).isActive = true
+        prefectureBriefTextView.widthAnchor.constraint(equalToConstant: 260 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //backLabel1
         backLabel1.translatesAutoresizingMaskIntoConstraints = false
-        backLabel1.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        backLabel1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        backLabel1.widthAnchor.constraint(equalToConstant: 140).isActive = true
-        backLabel1.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        backLabel1.topAnchor.constraint(equalTo: view.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel1.widthAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel1.heightAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //backLabel2
         backLabel2.translatesAutoresizingMaskIntoConstraints = false
-        backLabel2.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        backLabel2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        backLabel2.widthAnchor.constraint(equalToConstant: 140).isActive = true
-        backLabel2.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        backLabel2.topAnchor.constraint(equalTo: view.topAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel2.widthAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel2.heightAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //backLabel3
         backLabel3.translatesAutoresizingMaskIntoConstraints = false
-        backLabel3.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-        backLabel3.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        backLabel3.widthAnchor.constraint(equalToConstant: 140).isActive = true
-        backLabel3.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        backLabel3.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel3.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel3.widthAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel3.heightAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //backLabel4
         backLabel4.translatesAutoresizingMaskIntoConstraints = false
-        backLabel4.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-        backLabel4.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
-        backLabel4.widthAnchor.constraint(equalToConstant: 140).isActive = true
-        backLabel4.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        backLabel4.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel4.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel4.widthAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
+        backLabel4.heightAnchor.constraint(equalToConstant: 140 * UIScreen.main.bounds.size.width / 390).isActive = true
     }
     
     func update() {
@@ -225,9 +237,24 @@ class ResultDataView: UIView {
 
 extension ResultDataView {
     
+    //prefectureNameLabel
+    func configurePrefectureNameLabel() {
+        prefectureNameLabel.text = "県の名前"
+    }
+    
+    //capitalLabel
+    func configureCapitalLabel() {
+        capitalLabel.text = "県庁所在地の名前"
+    }
+    
     //citizenDayLabel
     func configureCitizenDayLabel() {
         citizenDayLabel.text = "県民の日なし"
+    }
+    
+    //hasCoastLabel
+    func configureHasCoastLabel() {
+        hasCoastLabel.text = "海岸線の有無"
     }
     
     //prefectureLogoImageView
@@ -238,8 +265,8 @@ extension ResultDataView {
     //backLabel1
     func configureBackLabel1() {
         backLabel1.text = "都"
-        backLabel1.layer.cornerRadius = 15
-        backLabel1.font = UIFont.systemFont(ofSize: 50)
+        backLabel1.layer.cornerRadius = 15 * UIScreen.main.bounds.size.width / 390
+        backLabel1.font = UIFont.systemFont(ofSize: 50 * UIScreen.main.bounds.size.width / 390)
         backLabel1.textColor = .white
         backLabel1.backgroundColor = .systemBrown
         backLabel1.textAlignment = NSTextAlignment.center
@@ -249,8 +276,8 @@ extension ResultDataView {
     //backLabel2
     func configureBackLabel2() {
         backLabel2.text = "道"
-        backLabel2.layer.cornerRadius = 15
-        backLabel2.font = UIFont.systemFont(ofSize: 50)
+        backLabel2.layer.cornerRadius = 15 * UIScreen.main.bounds.size.width / 390
+        backLabel2.font = UIFont.systemFont(ofSize: 50 * UIScreen.main.bounds.size.width / 390)
         backLabel2.textColor = .systemBrown
         backLabel2.backgroundColor = .white
         backLabel2.textAlignment = NSTextAlignment.center
@@ -260,8 +287,8 @@ extension ResultDataView {
     //backLabel3
     func configureBackLabel3() {
         backLabel3.text = "府"
-        backLabel3.layer.cornerRadius = 15
-        backLabel3.font = UIFont.systemFont(ofSize: 50)
+        backLabel3.layer.cornerRadius = 15 * UIScreen.main.bounds.size.width / 390
+        backLabel3.font = UIFont.systemFont(ofSize: 50 * UIScreen.main.bounds.size.width / 390)
         backLabel3.textColor = .systemBrown
         backLabel3.backgroundColor = .white
         backLabel3.textAlignment = NSTextAlignment.center
@@ -271,8 +298,8 @@ extension ResultDataView {
     //backLabel4
     func configureBackLabel4() {
         backLabel4.text = "県"
-        backLabel4.layer.cornerRadius = 15
-        backLabel4.font = UIFont.systemFont(ofSize: 50)
+        backLabel4.layer.cornerRadius = 15 * UIScreen.main.bounds.size.width / 390
+        backLabel4.font = UIFont.systemFont(ofSize: 50 * UIScreen.main.bounds.size.width / 390)
         backLabel4.textColor = .white
         backLabel4.backgroundColor = .systemBrown
         backLabel4.textAlignment = NSTextAlignment.center

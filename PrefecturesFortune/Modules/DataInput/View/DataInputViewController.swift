@@ -64,21 +64,21 @@ class DataInputViewController: UIViewController {
         
         //closeButton
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        closeButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        closeButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        closeButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 50 * UIScreen.main.bounds.size.width / 390).isActive = true
+        closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30 * UIScreen.main.bounds.size.width / 390).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //addButton
         addButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        addButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        addButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 50 * UIScreen.main.bounds.size.width / 390).isActive = true
+        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30 * UIScreen.main.bounds.size.width / 390).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 80 * UIScreen.main.bounds.size.width / 390).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 40 * UIScreen.main.bounds.size.width / 390).isActive = true
         
         //tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 10).isActive = true
+        tableView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 10 * UIScreen.main.bounds.size.width / 390).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -148,7 +148,7 @@ extension DataInputViewController {
         addButton.setTitle("追加", for: .normal)
         addButton.tintColor = .white
         addButton.backgroundColor = .systemBrown
-        addButton.layer.cornerRadius = 5
+        addButton.layer.cornerRadius = 5 * UIScreen.main.bounds.size.width / 390
     }
     
     //closeButton
@@ -156,11 +156,10 @@ extension DataInputViewController {
         closeButton.setTitle("", for: .normal)
         closeButton.tintColor = .systemGray
         closeButton.backgroundColor = .systemGray4
-        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 25, weight: .medium, scale: .small)
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 25 * UIScreen.main.bounds.size.width / 390, weight: .medium, scale: .small)
         let systemImage = UIImage(systemName: "xmark", withConfiguration: symbolConfiguration)
         closeButton.setImage(systemImage, for: .normal)
-        closeButton.layer.cornerRadius = 20
-        closeButton.frame = CGRect(x: 30, y: 30, width: 40, height: 40)
+        closeButton.layer.cornerRadius = 20 * UIScreen.main.bounds.size.width / 390
     }
 }
 
