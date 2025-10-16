@@ -7,23 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891861282E9B5CE100DB18DF /* PrefectureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891861272E9B5CE100DB18DF /* PrefectureData.swift */; };
 		896BA0AB2E989C850026F5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AA2E989C850026F5A6 /* AppDelegate.swift */; };
 		896BA0AD2E989C850026F5A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AC2E989C850026F5A6 /* SceneDelegate.swift */; };
-		896BA0AF2E989C850026F5A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AE2E989C850026F5A6 /* ViewController.swift */; };
+		896BA0AF2E989C850026F5A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896BA0AE2E989C850026F5A6 /* MainViewController.swift */; };
 		896BA0B22E989C850026F5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BA0B02E989C850026F5A6 /* Main.storyboard */; };
 		896BA0B42E989C860026F5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896BA0B32E989C860026F5A6 /* Assets.xcassets */; };
 		896BA0B72E989C860026F5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BA0B52E989C860026F5A6 /* LaunchScreen.storyboard */; };
+		896EDF1B2E98C65800AD0664 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1A2E98C65800AD0664 /* MainRouter.swift */; };
+		896EDF1E2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF1D2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift */; };
+		896EDF222E98D07B00AD0664 /* DataInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF212E98D07B00AD0664 /* DataInput.storyboard */; };
+		896EDF242E98D0A700AD0664 /* DataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF232E98D0A700AD0664 /* DataInputViewController.swift */; };
+		896EDF272E98E7CD00AD0664 /* DataInputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */; };
+		896EDF342E990EAC00AD0664 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF322E990EAC00AD0664 /* NameCell.swift */; };
+		896EDF352E990EAC00AD0664 /* NameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF332E990EAC00AD0664 /* NameCell.xib */; };
+		896EDF382E990ED200AD0664 /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF362E990ED200AD0664 /* BirthdayCell.swift */; };
+		896EDF392E990ED200AD0664 /* BirthdayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF372E990ED200AD0664 /* BirthdayCell.xib */; };
+		896EDF3C2E990EEB00AD0664 /* BloodtypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF3A2E990EEB00AD0664 /* BloodtypeCell.swift */; };
+		896EDF3D2E990EEB00AD0664 /* BloodtypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF3B2E990EEB00AD0664 /* BloodtypeCell.xib */; };
+		896EDF402E9A3A6B00AD0664 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF3F2E9A3A6B00AD0664 /* UserData.swift */; };
+		896EDF432E9A434F00AD0664 /* CreateUserDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF422E9A434F00AD0664 /* CreateUserDataInteractor.swift */; };
+		896EDF452E9A7B6D00AD0664 /* CurrentDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EDF442E9A7B6D00AD0664 /* CurrentDataView.swift */; };
+		896EDF482E9A7BA700AD0664 /* CurrentDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896EDF472E9A7BA700AD0664 /* CurrentDataView.xib */; };
+		896F9F092E98AD5D00D34DDF /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F9F082E98AD5D00D34DDF /* AppDependencies.swift */; };
+		896F9F0B2E98AFC400D34DDF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F9F0A2E98AFC400D34DDF /* MainPresenter.swift */; };
+		897D10462E9BD2C1006A5234 /* ResultDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D10452E9BD2C1006A5234 /* ResultDataView.swift */; };
+		897D10482E9BD2DB006A5234 /* ResultDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 897D10472E9BD2DB006A5234 /* ResultDataView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891861272E9B5CE100DB18DF /* PrefectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureData.swift; sourceTree = "<group>"; };
 		896BA0A72E989C850026F5A6 /* PrefecturesFortune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrefecturesFortune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		896BA0AA2E989C850026F5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		896BA0AC2E989C850026F5A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		896BA0AE2E989C850026F5A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		896BA0AE2E989C850026F5A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		896BA0B12E989C850026F5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		896BA0B32E989C860026F5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		896BA0B62E989C860026F5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		896BA0B82E989C860026F5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		896EDF1A2E98C65800AD0664 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		896EDF1D2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrefectureDataInteractor.swift; sourceTree = "<group>"; };
+		896EDF212E98D07B00AD0664 /* DataInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataInput.storyboard; sourceTree = "<group>"; };
+		896EDF232E98D0A700AD0664 /* DataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputViewController.swift; sourceTree = "<group>"; };
+		896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputPresenter.swift; sourceTree = "<group>"; };
+		896EDF322E990EAC00AD0664 /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
+		896EDF332E990EAC00AD0664 /* NameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameCell.xib; sourceTree = "<group>"; };
+		896EDF362E990ED200AD0664 /* BirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
+		896EDF372E990ED200AD0664 /* BirthdayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayCell.xib; sourceTree = "<group>"; };
+		896EDF3A2E990EEB00AD0664 /* BloodtypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodtypeCell.swift; sourceTree = "<group>"; };
+		896EDF3B2E990EEB00AD0664 /* BloodtypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodtypeCell.xib; sourceTree = "<group>"; };
+		896EDF3F2E9A3A6B00AD0664 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		896EDF422E9A434F00AD0664 /* CreateUserDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserDataInteractor.swift; sourceTree = "<group>"; };
+		896EDF442E9A7B6D00AD0664 /* CurrentDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDataView.swift; sourceTree = "<group>"; };
+		896EDF472E9A7BA700AD0664 /* CurrentDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentDataView.xib; sourceTree = "<group>"; };
+		896F9F082E98AD5D00D34DDF /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		896F9F0A2E98AFC400D34DDF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		897D10452E9BD2C1006A5234 /* ResultDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataView.swift; sourceTree = "<group>"; };
+		897D10472E9BD2DB006A5234 /* ResultDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultDataView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +77,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8901BBFE2E98A2E800770DED /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8901BBFF2E98A33500770DED /* Main */,
+				896EDF1F2E98CF7A00AD0664 /* DataInput */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8901BBFF2E98A33500770DED /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				896F9F062E98A3CF00D34DDF /* View */,
+				896F9F072E98A3E200D34DDF /* Presenter */,
+				896EDF1C2E98C8CF00AD0664 /* Interactor */,
+				896EDF192E98C62700AD0664 /* Router */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		896BA09E2E989C850026F5A6 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +118,141 @@
 			children = (
 				896BA0AA2E989C850026F5A6 /* AppDelegate.swift */,
 				896BA0AC2E989C850026F5A6 /* SceneDelegate.swift */,
-				896BA0AE2E989C850026F5A6 /* ViewController.swift */,
-				896BA0B02E989C850026F5A6 /* Main.storyboard */,
+				896F9F082E98AD5D00D34DDF /* AppDependencies.swift */,
+				896EDF3E2E9A3A3C00AD0664 /* Entity */,
+				8901BBFE2E98A2E800770DED /* Modules */,
 				896BA0B32E989C860026F5A6 /* Assets.xcassets */,
 				896BA0B52E989C860026F5A6 /* LaunchScreen.storyboard */,
 				896BA0B82E989C860026F5A6 /* Info.plist */,
 			);
 			path = PrefecturesFortune;
+			sourceTree = "<group>";
+		};
+		896EDF192E98C62700AD0664 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF1A2E98C65800AD0664 /* MainRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		896EDF1C2E98C8CF00AD0664 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF1D2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		896EDF1F2E98CF7A00AD0664 /* DataInput */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF202E98CF9100AD0664 /* View */,
+				896EDF252E98E7A700AD0664 /* Presenter */,
+				896EDF412E9A431300AD0664 /* Interactor */,
+			);
+			path = DataInput;
+			sourceTree = "<group>";
+		};
+		896EDF202E98CF9100AD0664 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF232E98D0A700AD0664 /* DataInputViewController.swift */,
+				896EDF212E98D07B00AD0664 /* DataInput.storyboard */,
+				896EDF312E990E8D00AD0664 /* NameCell */,
+				896EDF292E990A0400AD0664 /* BirthdayCell */,
+				896EDF2A2E990A1900AD0664 /* BloodtypeCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		896EDF252E98E7A700AD0664 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF262E98E7CD00AD0664 /* DataInputPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		896EDF292E990A0400AD0664 /* BirthdayCell */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF362E990ED200AD0664 /* BirthdayCell.swift */,
+				896EDF372E990ED200AD0664 /* BirthdayCell.xib */,
+			);
+			path = BirthdayCell;
+			sourceTree = "<group>";
+		};
+		896EDF2A2E990A1900AD0664 /* BloodtypeCell */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF3A2E990EEB00AD0664 /* BloodtypeCell.swift */,
+				896EDF3B2E990EEB00AD0664 /* BloodtypeCell.xib */,
+			);
+			path = BloodtypeCell;
+			sourceTree = "<group>";
+		};
+		896EDF312E990E8D00AD0664 /* NameCell */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF322E990EAC00AD0664 /* NameCell.swift */,
+				896EDF332E990EAC00AD0664 /* NameCell.xib */,
+			);
+			path = NameCell;
+			sourceTree = "<group>";
+		};
+		896EDF3E2E9A3A3C00AD0664 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF3F2E9A3A6B00AD0664 /* UserData.swift */,
+				891861272E9B5CE100DB18DF /* PrefectureData.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		896EDF412E9A431300AD0664 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF422E9A434F00AD0664 /* CreateUserDataInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		896EDF462E9A7B8100AD0664 /* CurrentDataView */ = {
+			isa = PBXGroup;
+			children = (
+				896EDF442E9A7B6D00AD0664 /* CurrentDataView.swift */,
+				896EDF472E9A7BA700AD0664 /* CurrentDataView.xib */,
+			);
+			path = CurrentDataView;
+			sourceTree = "<group>";
+		};
+		896F9F062E98A3CF00D34DDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				896BA0AE2E989C850026F5A6 /* MainViewController.swift */,
+				896BA0B02E989C850026F5A6 /* Main.storyboard */,
+				896EDF462E9A7B8100AD0664 /* CurrentDataView */,
+				897D10442E9BD284006A5234 /* ResultDataView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		896F9F072E98A3E200D34DDF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				896F9F0A2E98AFC400D34DDF /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		897D10442E9BD284006A5234 /* ResultDataView */ = {
+			isa = PBXGroup;
+			children = (
+				897D10452E9BD2C1006A5234 /* ResultDataView.swift */,
+				897D10472E9BD2DB006A5234 /* ResultDataView.xib */,
+			);
+			path = ResultDataView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				896BA0B72E989C860026F5A6 /* LaunchScreen.storyboard in Resources */,
+				897D10482E9BD2DB006A5234 /* ResultDataView.xib in Resources */,
+				896EDF352E990EAC00AD0664 /* NameCell.xib in Resources */,
+				896EDF222E98D07B00AD0664 /* DataInput.storyboard in Resources */,
 				896BA0B42E989C860026F5A6 /* Assets.xcassets in Resources */,
+				896EDF482E9A7BA700AD0664 /* CurrentDataView.xib in Resources */,
+				896EDF392E990ED200AD0664 /* BirthdayCell.xib in Resources */,
 				896BA0B22E989C850026F5A6 /* Main.storyboard in Resources */,
+				896EDF3D2E990EEB00AD0664 /* BloodtypeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +332,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				896BA0AF2E989C850026F5A6 /* ViewController.swift in Sources */,
+				896EDF402E9A3A6B00AD0664 /* UserData.swift in Sources */,
+				897D10462E9BD2C1006A5234 /* ResultDataView.swift in Sources */,
+				896F9F0B2E98AFC400D34DDF /* MainPresenter.swift in Sources */,
+				896EDF272E98E7CD00AD0664 /* DataInputPresenter.swift in Sources */,
+				896EDF242E98D0A700AD0664 /* DataInputViewController.swift in Sources */,
+				896EDF382E990ED200AD0664 /* BirthdayCell.swift in Sources */,
+				896F9F092E98AD5D00D34DDF /* AppDependencies.swift in Sources */,
+				896EDF432E9A434F00AD0664 /* CreateUserDataInteractor.swift in Sources */,
+				896BA0AF2E989C850026F5A6 /* MainViewController.swift in Sources */,
 				896BA0AB2E989C850026F5A6 /* AppDelegate.swift in Sources */,
+				891861282E9B5CE100DB18DF /* PrefectureData.swift in Sources */,
+				896EDF1E2E98C9BB00AD0664 /* GetPrefectureDataInteractor.swift in Sources */,
+				896EDF3C2E990EEB00AD0664 /* BloodtypeCell.swift in Sources */,
 				896BA0AD2E989C850026F5A6 /* SceneDelegate.swift in Sources */,
+				896EDF342E990EAC00AD0664 /* NameCell.swift in Sources */,
+				896EDF1B2E98C65800AD0664 /* MainRouter.swift in Sources */,
+				896EDF452E9A7B6D00AD0664 /* CurrentDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +506,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +516,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuta.PrefecturesFortune;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,8 +538,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +548,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuta.PrefecturesFortune;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
